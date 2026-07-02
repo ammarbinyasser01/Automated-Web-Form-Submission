@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data Entry Form</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f2f2f2;
+        }
+
+        .container{
+            width:500px;
+            margin:40px auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        label{
+            display:block;
+            margin-top:15px;
+            font-weight:bold;
+        }
+
+        input,select{
+            width:100%;
+            padding:8px;
+            margin-top:5px;
+        }
+
+        .radio-group,
+        .checkbox-group{
+            margin-top:8px;
+        }
+
+        .radio-group input,
+        .checkbox-group input{
+            width:auto;
+        }
+
+        button{
+            margin-top:20px;
+            width:100%;
+            padding:12px;
+            background:#007BFF;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        #successMessage{
+            margin-top:20px;
+            color:green;
+            display:none;
+            font-weight:bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Employee Data Entry Form</h2>
+
+<form id="employeeForm">
+
+<label>Name</label>
+<input
+type="text"
+id="name"
+required>
+
+<label>Email</label>
+<input
+type="email"
+id="email"
+required>
+
+<label>Gender</label>
+
+<div class="radio-group">
+
+<input
+type="radio"
+name="gender"
+id="male"
+value="Male">
+Male
+
+<input
+type="radio"
+name="gender"
+id="female"
+value="Female">
+Female
+
+</div>
+
+<label>Experience</label>
+
+<select id="experience">
+
+<option>Beginner</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+<option>Expert</option>
+
+</select>
+
+<label>Automation Training Completed</label>
+
+<div class="checkbox-group">
+
+<input
+type="checkbox"
+id="automation">
+
+Yes
+
+</div>
+
+<button type="submit">
+Submit
+</button>
+
+</form>
+
+<p id="successMessage">
+Form Submitted Successfully!
+</p>
+
+</div>
+
+<script>
+
+document.getElementById("employeeForm").addEventListener("submit",function(event){
+
+event.preventDefault();
+
+document.getElementById("successMessage").style.display="block";
+
+this.reset();
+
+});
+
+</script>
+
+</body>
+</html>
